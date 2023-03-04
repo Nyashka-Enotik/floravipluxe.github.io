@@ -49,7 +49,7 @@ for (var i = 0; i < contacts_slider2.length; i++) {
         });
     }
     else{
-        $(contacts_slider[i]).slick({
+        $(contacts_slider2[i]).slick({
             slidesToScroll: 1,
             autoplay: false,
             arrows: false,
