@@ -668,11 +668,17 @@
         }
     </script>
     <style>
+        .contacts-section{
+            margin-top: 100px;
+        }
         #map {
             margin-top: 60px;
             width: 500px;
             height: 500px;
 
+        }
+        #map3 iframe{
+            width: 500px;
         }
 
         @media (max-width:530px) {
@@ -691,23 +697,32 @@
             #map2 iframe{
                 width: 100%;
             }
+            .col2{
+                order:2;
+            }
+            .contacts__item__title2{
+                order: 1;
+            }
         }
 
         .slick-slide { margin: 0 10px;}
-        .block {
+        .contacts__select-block,
+        .contacts__select-block2{
             display: none;
             margin: 10px;
             padding: 10px;
+            position: relative;
 
         }
-        .form-group {
+        .contacts__form-group {
             margin-bottom: 2rem;
             text-align: center;
         }
-        .heading-test{
-            font-size: 20px;
+        .contacts__heading{
+            font-size: 30px;
+            margin-bottom: 25px;
         }
-        .select-css {
+        .contacts__select-form {
             display: block;
             font-size: 16px;
             font-family: sans-serif;
@@ -730,63 +745,181 @@
             background-position: right .7em top 50%, 0 0;
             background-size: .65em auto, 100%;
         }
-        .select-css::-ms-expand { display: none; }
-        .select-css:focus { border-color: #aaa;
+        .contacts__select-form::-ms-expand { display: none; }
+        .contacts__select-form:focus { border-color: #aaa;
             box-shadow: 0 0 0 0.2rem rgb(0 123 255 / 25%);
             outline: none;
         }
-        .select-css option { font-weight:normal; color: black}
-        *[dir="rtl"] .select-css, :root:lang(ar) .select-css, :root:lang(iw) .select-css {
+        .contacts__select-form option,
+        .contacts__select-form optgroup { font-weight:normal; color: black}
+
+        *[dir="rtl"] .contacts__select-form, :root:lang(ar) .contacts__select-form, :root:lang(iw) .contacts__select-form {
             background-position: left .7em top 50%, 0 0;
             padding: .6em .8em .5em 1.4em;
         }
-        .slider-img2{
+        .contacts__item__slider-img{
             object-fit: cover;
             width: 100%;
             height: 300px;
         }
-        .vivoz__item.slick-slide,
-        .vivoz__item{
+        .contacts__item.slick-slide,
+        .contacts__item{
             display: flex;
             flex-direction: column;
             text-align: center;
             align-items: center;
             gap: 25px;
         }
-        .vivoz__item span{
+        .contacts__item__title{
+            display: flex;
+            flex-wrap: wrap;
             color: white;
+            justify-content: center;
+            font-size: 20px;
         }
-        .phone-vivoz:hover{
+        .contacts__item__title a{
+            height: auto;
+        }
+        .contacts__item__title2{
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: column;
+            color: white;
+            justify-content: center;
+            font-size: 20px;
+            min-width: 300px;
+            max-width: 300px;
+        }
+        .contacts__item__title2 a{
+            height: auto;
+        }
+        .contacts__item__phone:hover{
         color:#82358c;
         }
-        @media screen and (min-width: 768px) {
-            .slider-img2 {
+        .contacts__item__content{
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+        .prev{
+            display: block;
+            height: 40px;
+            width: 30px;
+            background: url('/img/pre-arrow.svg') no-repeat;
+            background-size: 30px;
+            background-position: center;
+            position: absolute;
+            top: -8px;
+            left: -30px;
+            z-index: 9;
+        }
+
+        .next {
+            display: block;
+            height: 40px;
+            width: 30px;
+            background: url(/img/next-arrow.svg) no-repeat;
+            background-size: 30px;
+            background-position: center;
+            position: absolute;
+            top: -8px;
+            right: -30px;
+            z-index: 9;
+        }
+        .prev2{
+            display: block;
+            height: 40px;
+            width: 30px;
+            background: url('/img/pre-arrow.svg') no-repeat;
+            background-size: 30px;
+            background-position: center;
+            position: absolute;
+            top: -8px;
+            left: -30px;
+        }
+
+        .next2 {
+            display: block;
+            height: 40px;
+            width: 30px;
+            background: url(/img/next-arrow.svg) no-repeat;
+            background-size: 30px;
+            background-position: center;
+            position: absolute;
+            top: -8px;
+            right: -30px;
+        }
+        @media screen and (min-width: 1024px) {
+            .contacts__item__slider-img {
                 object-fit: cover;
                 width: 600px;
                 height: 450px;
 
             }
+            .contacts__item__title{
+                width: 450px;
+            }
+            .contacts__item__content{
+                flex-direction: row;
+            }
+            .prev{
+                top: -10px;
+                left: 20%;
+            }
+
+            .next2{
+                top: 0px;
+                right: 10%;
+            }
+            .prev2{
+                top: -0px;
+                right: 20%;
+                left: auto;
+            }
+
+            .next{
+                top: -10px;
+                right: 20%;
+            }
         }
+        button {
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            margin: 10px;
+            font-size: 18px;
+            font-weight: 600;
+            transition: all 0.5s;
+        }
+        button:focus {
+           outline: none;
+        }
+
     </style>
-    <div class="map-block" id="contacts">
+    <div class="contacts-section" id="contacts2">
         <div class="container">
             <div class="row">
                 <div class="col media-map">
-
-
-                    <h2 class="catalog-title d-flex justify-content-center mb-40 heading-test">
+                    <h2 class="catalog-title d-flex justify-content-center mb-40 contacts__heading">
                         Пункти самовивозу
                     </h2>
-    <div class="form-group">
-        <select id="select" class="select-css">
+    <div class="contacts__form-group">
+        <select id="select-form" class="contacts__select-form">
+            <optgroup label="Київська область">
             <option>Київ</option>
             <option>Бровари</option>
             <option>Біла церква</option>
+            <option>Софіївська Борщагівка</option>
+            <option>Щасливе</option>
+            <option>Вишгород</option>
+            </optgroup>
+            <optgroup label="Житомирська область">
             <option>Житомир</option>
             <option>Коростишів</option>
             <option>Бердичів</option>
             <option>Коростень</option>
             <option>Зв'ягель</option>
+            </optgroup>
             <option>Вінниця</option>
             <option>Чернігів</option>
             <option>Черкаси</option>
@@ -797,59 +930,459 @@
         </select>
     </div>
 
-    <div class="block" style="display: block">
-        <div class="vivoz">
-            <div class="vivoz__item">
-                <span>Оболонський проспект, 21 - <a class="phone-vivoz" href="tell:+380688268888">0(68)-826-88-88</a></span>
-                <img src="img/2021-07-22.jpg" alt="" class="slider-img2">
+    <div class="contacts__select-block" style="display: block">
+        <div class="contacts__items">
+            <div class="contacts__item">
+                <div class="contacts__item__title">
+                    <span>Оболонський проспект, 21Б - </span>
+                <a class="contacts__item__phone-" href="tell:+380688268888">0(68)-826-88-88</a>
+                </div>
+               <div class="contacts__item__content">
+                   <div class="contacts__item__img">
+                <img src="img/hDXsyyix5w.jpg" alt="" class="contacts__item__slider-img">
+                       </div>
                 <div class="col2">
                     <div class="map">
-                        <div id="map2"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2537.0942092704663!2d30.49541695122373!3d50.51381387938342!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40d4d214c8802ad9%3A0x4d6273b6fd4c9144!2z0J7QsdC-0LvQvtC90YHQutC40Lkg0L_RgNC-0YHQvy4sIDIxLCDQmtC40LXQsiwgMDQyMDU!5e0!3m2!1sru!2sua!4v1677792810274!5m2!1sru!2sua" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>                        </div>
+                        <div id="map2"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2537.0942092704663!2d30.49541695122373!3d50.51381387938342!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40d4d214c8802ad9%3A0x4d6273b6fd4c9144!2z0J7QsdC-0LvQvtC90YHQutC40Lkg0L_RgNC-0YHQvy4sIDIxLCDQmtC40LXQsiwgMDQyMDU!5e0!3m2!1suk!2sua!4v1677792810274!5m2!1suk!2sua" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>                        </div>
+                    </div>
+                </div>
+               </div>
+            </div>
+            <div class="contacts__item">
+                <div class="contacts__item__title">
+                 <span>вул. Празька,3 - </span><a class="contacts__item__phone" href="tell:+380688278888">0 (68)-827-88-88</a>
+                </div>
+                <div class="contacts__item__content">
+                    <div class="contacts__item__img">
+                        <img src="img/78.jpg" alt="" class="contacts__item__slider-img">
+                    </div>
+                    <div class="col2">
+                        <div class="map">
+                            <div id="map2">
+                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2540.981518082426!2d30.62580309676957!3d50.44144491402803!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40d4c544ee348511%3A0x25b4bb498ce24058!2z0YPQuy4g0J_RgNCw0LbRgdC60LDRjywgMywg0JrQuNC10LIsIDAyMDAw!5e0!3m2!1suk!2sua!4v1677794016174!5m2!1suk!2sua" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="vivoz__item">
-                <span>вул. Празька,3 - <a class="phone-vivoz" href="tell:+380688278888">0 (68)-827-88-88</a></span>
-                <img src="img/16209964597746840088024761020021.jpg" alt="" class="slider-img2">
+            <div class="contacts__item">
+                <div class="contacts__item__title">
+                    <span>Ярославська, 56а - </span><a class="contacts__item__phone" href="tell:+380987888211">0 (98)-788-82-11</a>
+                </div>
+                <div class="contacts__item__content">
+                    <div class="contacts__item__img">
+                        <img src="img/1445186457_0.jpg" alt="" class="contacts__item__slider-img">
+                    </div>
+                    <div class="col2">
+                        <div class="map">
+                            <div id="map2">
+                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2539.3725965624685!2d30.51303029677848!3d50.471406914045396!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40d4ce14241fdcef%3A0xbfeda969bd835cfa!2z0YPQuy4g0K_RgNC-0YHQu9Cw0LLRgdC60LDRjywgNTbQsCwg0JrQuNC10LIsIDAyMDAw!5e0!3m2!1suk!2sua!4v1677942703084!5m2!1suk!2sua" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="contacts__item">
+                <div class="contacts__item__title">
+                    <span>Митрополита Андрея Шептицького,4 - </span><a class="contacts__item__phone" href="tell:+380977888011">0 (97)-788-80-11</a>
+                </div>
+                <div class="contacts__item__content">
+                    <div class="contacts__item__img">
+                        <img src="img/i_10_palazzi_pi_belli_al_mondo.jpg.webp" alt="" class="contacts__item__slider-img">
+                    </div>
+                    <div class="col2">
+                        <div class="map">
+                            <div id="map2">
+                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2540.3267530597614!2d30.596538651221515!3d50.453639779375074!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40d4cfef91097599%3A0x1aa0cf6d5be4507!2z0YPQuy4g0JzQuNGC0YDQvtC_0L7Qu9C40YLQsCDQkNC90LTRgNC10Y8g0KjQtdC_0YLQuNGG0YzQutC-0LPQviwgNCwg0JrQuNC10LIsIDAyMDAw!5e0!3m2!1suk!2sua!4v1677942587244!5m2!1suk!2sua" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="contacts__select-block">
+
+        <div class="contacts__items">
+            <div class="contacts__item">
+                <div class="contacts__item__title">
+                <span>вул. Симона Петлюри, 20 - </span>
+                <a class="contacts__item__phone" href="tell:+380680458888">0(68)-045-88-88</a>
+                    </div>
+                    <div class="contacts__item__content">
+                        <div class="contacts__item__img">
+                <img src="img/i_10_palazzi_pi_belli_al_mondo_3.jpg.webp" alt="" class="contacts__item__slider-img">
+                        </div>
                 <div class="col2">
                     <div class="map">
-                        <div id="map2"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2540.981518082426!2d30.62580309676957!3d50.44144491402803!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40d4c544ee348511%3A0x25b4bb498ce24058!2z0YPQuy4g0J_RgNCw0LbRgdC60LDRjywgMywg0JrQuNC10LIsIDAyMDAw!5e0!3m2!1sru!2sua!4v1677794016174!5m2!1sru!2sua" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        <div id="map2"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2536.660627665055!2d30.80119425136266!3d50.521881079384634!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40d4d9129c028ce1%3A0x8669313037ad946c!2z0YPQuy4g0KHQuNC80L7QvdCwINCf0LXRgtC70Y7RgNGLLCAyMCwg0JHRgNC-0LLQsNGA0YssINCa0LjQtdCy0YHQutCw0Y8g0L7QsdC70LDRgdGC0YwsIDA3NDAw!5e0!3m2!1suk!2sua!4v1677942809861!5m2!1suk!2sua" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>                        </div>
+                    </div>
+                </div>
+                </div>
+            </div>
+            <div class="contacts__item">
+                <div class="contacts__item__title">
+                    <span>вул. Київська, 156 - </span>
+                    <a class="contacts__item__phone" href="tell:+380977888001">0(97)-788-80-01</a>
+                </div>
+                <div class="contacts__item__content">
+                    <div class="contacts__item__img">
+                        <img src="img/i_10_palazzi_pi_belli_al_mondo_22.jpg.webp" alt="" class="contacts__item__slider-img">
+                    </div>
+                    <div class="col2">
+                        <div class="map">
+                            <div id="map2"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2537.9377393549835!2d30.763864095606444!3d50.49811651406088!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40d4dbd1b1511b93%3A0x6f0d30205c8b1d37!2z0YPQuy4g0JrQuNC10LLRgdC60LDRjywgMTU2LCDQkdGA0L7QstCw0YDRiywg0JrQuNC10LLRgdC60LDRjyDQvtCx0LvQsNGB0YLRjCwgMDc0MDE!5e0!3m2!1suk!2sua!4v1677942378723!5m2!1suk!2sua" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>                        </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-
     </div>
-    <div class="block">
-
-        <div class="vivoz">
-            <div class="vivoz__item">
-                <span>вул. Симона Петлюри, 20 - <a class="phone-vivoz" href="tell:+380680458888">0(68)-045-88-88</a></span>
-                <img src="img/2021-07-22.jpg" alt="" class="slider-img2">
-                <div class="col2">
-                    <div class="map">
-                        <div id="map2"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2537.0942092704663!2d30.49541695122373!3d50.51381387938342!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40d4d214c8802ad9%3A0x4d6273b6fd4c9144!2z0J7QsdC-0LvQvtC90YHQutC40Lkg0L_RgNC-0YHQvy4sIDIxLCDQmtC40LXQsiwgMDQyMDU!5e0!3m2!1sru!2sua!4v1677792810274!5m2!1sru!2sua" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>                        </div>
+    <div class="contacts__select-block">
+        <div class="contacts__items">
+            <div class="contacts__item">
+                <div class="contacts__item__title">
+                    <span>вул. Привокзальна площа - </span>
+                    <a class="contacts__item__phone" href="tell:+380680278888">0(68)-027-88-88</a>
+                </div>
+                <div class="contacts__item__content">
+                    <div class="contacts__item__img">
+                        <img src="img/i_10_palazzi_pi_belli_al_mondo_6.jpg.webp" alt="" class="contacts__item__slider-img">
+                    </div>
+                    <div class="col2">
+                        <div class="map">
+                            <div id="map2"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2574.75713136146!2d30.11075395119706!3d49.80943347929089!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40d3423946c74b6b%3A0x7e17bc3dbb11714d!2z0J_RgNC40LLQvtC60LfQsNC70YzQvdCw0Y8g0YPQuy4sINCR0LXQu9Cw0Y8g0KbQtdGA0LrQvtCy0YwsINCa0LjQtdCy0YHQutCw0Y8g0L7QsdC70LDRgdGC0YwsIDA5MTAw!5e0!3m2!1suk!2sua!4v1677942341234!5m2!1suk!2sua" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>                        </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="contacts__item">
+                <div class="contacts__item__title">
+                    <span>вул. Ярослава Мудрого, 16 - </span>
+                    <a class="contacts__item__phone" href="tell:+380686638888">0(68)-663-88-88</a>
+                </div>
+                <div class="contacts__item__content">
+                    <div class="contacts__item__img">
+                        <img src="img/i_10_palazzi_pi_belli_al_mondo_13.jpg.webp" alt="" class="contacts__item__slider-img">
+                    </div>
+                    <div class="col2">
+                        <div class="map">
+                            <div id="map2"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2575.5393330029933!2d30.114130051196604!3d49.79472737928911!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40d3421ecda0ce77%3A0x1a0f654c579ed319!2z0LLRg9C70LjRhtGPINCv0YDQvtGB0LvQsNCy0LAg0JzRg9C00YDQvtCz0L4sIDE2LCDQkdGW0LvQsCDQptC10YDQutCy0LAsINCa0LjRl9Cy0YHRjNC60LAg0L7QsdC7LiwgMDkxMDA!5e0!3m2!1suk!2sua!4v1677942297247!5m2!1suk!2sua" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>                        </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-
     </div>
-    <div class="block">2</div>
-    <div class="block">3</div>
-    <div class="block">4</div>
-    <div class="block">5</div>
-    <div class="block">6</div>
-    <div class="block">7</div>
-    <div class="block">8</div>
-    <div class="block">9</div>
-    <div class="block">10</div>
-                    <div class="block">11</div>
-                    <div class="block">12</div>
-                    <div class="block">13</div>
-                    <div class="block">14</div>
-                    <div class="block">15</div>
+    <div class="contacts__select-block">
+        <div class="contacts__items">
+            <div class="contacts__item">
+                <div class="contacts__item__title">
+                    <span>вул.Київська, 1/102 - </span>
+                    <a class="contacts__item__phone" href="tell:+380967888211">0(96)-788-82-11</a>
+                </div>
+                <div class="contacts__item__content">
+                    <div class="contacts__item__img">
+                        <img src="img/i_10_palazzi_pi_belli_al_mondo_10.jpg.webp" alt="" class="contacts__item__slider-img">
+                    </div>
+                    <div class="col2">
+                        <div class="map">
+                            <div id="map2"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2543.387091184705!2d30.364549251219284!3d50.39662317936722!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40d4cbccaeb044b5%3A0x1f69708acf778cb0!2z0YPQuy4g0JrQuNC10LLRgdC60LDRjywgMSwg0JLQuNGI0L3QtdCy0L7QtSwg0JrQuNC10LLRgdC60LDRjyDQvtCx0LvQsNGB0YLRjCwgMDgxMzI!5e0!3m2!1suk!2sua!4v1677942235059!5m2!1suk!2sua" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>                        </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="contacts__select-block">
+        <div class="contacts__items">
+            <div class="contacts__item">
+                <div class="contacts__item__title">
+                    <span>вул.Харківське шосе, 21В -</span>
+                    <a class="contacts__item__phone" href="tell:+380677888211"> 0(67)-788-82-11</a>
+                </div>
+                <div class="contacts__item__content">
+                    <div class="contacts__item__img">
+                        <img src="img/i_10_palazzi_pi_belli_al_mondo_11.jpg.webp" alt="" class="contacts__item__slider-img">
+                    </div>
+                    <div class="col2">
+                        <div class="map">
+                            <div id="map2"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5237.675458256759!2d30.792486373073583!3d50.379894444882616!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40d4c4f072515d3f%3A0xc16fdbfd4ed33336!2z0KXQsNGA0YzQutC-0LLRgdC60L7QtSDRiC4sIDE4MC8yMSwg0JrQuNC10LIsIDAyMDAw!5e0!3m2!1suk!2sua!4v1677942178377!5m2!1suk!2sua" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>                        </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="contacts__select-block">
+        <div class="contacts__items">
+            <div class="contacts__item">
+                <div class="contacts__item__title">
+                    <span>вул.Набережна, 11 -</span>
+                    <a class="contacts__item__phone" href="tell:+380987888011"> 0(98)-788-80-11</a>
+                </div>
+                <div class="contacts__item__content">
+                    <div class="contacts__item__img">
+                        <img src="img/i_10_palazzi_pi_belli_al_mondo_12.jpg.webp" alt="" class="contacts__item__slider-img">
+                    </div>
+                    <div class="col2">
+                        <div class="map">
+                            <div id="map2"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2533.3748897835517!2d30.4958569!3d50.582985!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40d4d35efa33d99f%3A0x31da965df82b6434!2z0L3QsNCxLiDRg9C7LiwgMTEsINCS0YvRiNCz0L7RgNC-0LQsINCa0LjQtdCy0YHQutCw0Y8g0L7QsdC70LDRgdGC0YwsIDA3MzAx!5e0!3m2!1suk!2sua!4v1677941925534!5m2!1suk!2sua" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>                        </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="contacts__select-block">6</div>
+    <div class="contacts__select-block">7</div>
+    <div class="contacts__select-block">8</div>
+    <div class="contacts__select-block">9</div>
+    <div class="contacts__select-block">10</div>
+                    <div class="contacts__select-block">11</div>
+                    <div class="contacts__select-block">12</div>
+                    <div class="contacts__select-block">13</div>
+                    <div class="contacts__select-block">14</div>
+                    <div class="contacts__select-block">15</div>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="contacts-section" id="contacts3">
+        <div class="container">
+            <div class="row">
+                <div class="col media-map">
+
+
+                    <h2 class="catalog-title d-flex justify-content-center mb-40 contacts__heading">
+                        Пункти самовивозу
+                    </h2>
+                    <div class="contacts__form-group">
+                        <select id="select-form2" class="contacts__select-form">
+                            <optgroup label="Київська область">
+                                <option>Київ</option>
+                                <option>Бровари</option>
+                                <option>Біла церква</option>
+                                <option>Софіївська Борщагівка</option>
+                                <option>Щасливе</option>
+                                <option>Вишгород</option>
+                            </optgroup>
+                            <optgroup label="Житомирська область">
+                                <option>Житомир</option>
+                                <option>Коростишів</option>
+                                <option>Бердичів</option>
+                                <option>Коростень</option>
+                                <option>Зв'ягель</option>
+                            </optgroup>
+                            <option>Вінниця</option>
+                            <option>Чернігів</option>
+                            <option>Черкаси</option>
+                            <option>Умань</option>
+                            <option>Одеса</option>
+                            <option>Кропивницький</option>
+                            <option>Шепетівка</option>
+                        </select>
+                    </div>
+
+                    <div class="contacts__select-block2" style="display: block">
+                        <div class="contacts__items2">
+                            <div class="contacts__item">
+                                <div class="contacts__item__content">
+                                    <div class="col2">
+                                        <div class="map">
+                                            <div id="map3"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2537.0942092704663!2d30.49541695122373!3d50.51381387938342!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40d4d214c8802ad9%3A0x4d6273b6fd4c9144!2z0J7QsdC-0LvQvtC90YHQutC40Lkg0L_RgNC-0YHQvy4sIDIxLCDQmtC40LXQsiwgMDQyMDU!5e0!3m2!1suk!2sua!4v1677792810274!5m2!1suk!2sua" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>                        </div>
+                                        </div>
+                                    </div>
+                                    <div class="contacts__item__title2">
+                                        <span>Оболонський проспект, 21 - </span>
+                                        <a class="contacts__item__phone" href="tell:+380688268888">0(68)-826-88-88</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="contacts__item">
+                                <div class="contacts__item__content">
+                                    <div class="col2">
+                                        <div class="map">
+                                            <div id="map3"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2540.981518082426!2d30.62580309676957!3d50.44144491402803!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40d4c544ee348511%3A0x25b4bb498ce24058!2z0YPQuy4g0J_RgNCw0LbRgdC60LDRjywgMywg0JrQuNC10LIsIDAyMDAw!5e0!3m2!1suk!2sua!4v1677794016174!5m2!1suk!2sua" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <div class="contacts__item__title2">
+                                        <span>вул. Празька,3 - </span>
+                                        <a class="contacts__item__phone" href="tell:+380688278888">0 (68)-827-88-88</a>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="contacts__item">
+                                <div class="contacts__item__content">
+                                    <div class="col2">
+                                        <div class="map">
+                                            <div id="map3"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2539.3725965624685!2d30.51303029677848!3d50.471406914045396!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40d4ce14241fdcef%3A0xbfeda969bd835cfa!2z0YPQuy4g0K_RgNC-0YHQu9Cw0LLRgdC60LDRjywgNTbQsCwg0JrQuNC10LIsIDAyMDAw!5e0!3m2!1suk!2sua!4v1677942703084!5m2!1suk!2sua" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <div class="contacts__item__title2">
+                                        <span>Ярославська, 56а - </span>
+                                        <a class="contacts__item__phone" href="tell:+380987888211">0 (98)-788-82-11</a>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="contacts__item">
+                                <div class="contacts__item__content">
+                                    <div class="col2">
+                                        <div class="map">
+                                            <div id="map3"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2540.3267530597614!2d30.596538651221515!3d50.453639779375074!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40d4cfef91097599%3A0x1aa0cf6d5be4507!2z0YPQuy4g0JzQuNGC0YDQvtC_0L7Qu9C40YLQsCDQkNC90LTRgNC10Y8g0KjQtdC_0YLQuNGG0YzQutC-0LPQviwgNCwg0JrQuNC10LIsIDAyMDAw!5e0!3m2!1suk!2sua!4v1677942587244!5m2!1suk!2sua" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <div class="contacts__item__title2">
+                                        <span>Митрополита Андрея Шептицького,4 - </span>
+                                        <a class="contacts__item__phone" href="tell:+380977888011">0 (97)-788-80-11</a>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="contacts__select-block2">
+
+                        <div class="contacts__items2">
+                            <div class="contacts__item">
+                                <div class="contacts__item__content">
+                                    <div class="col2">
+                                        <div class="map">
+                                            <div id="map3"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2536.660627665055!2d30.80119425136266!3d50.521881079384634!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40d4d9129c028ce1%3A0x8669313037ad946c!2z0YPQuy4g0KHQuNC80L7QvdCwINCf0LXRgtC70Y7RgNGLLCAyMCwg0JHRgNC-0LLQsNGA0YssINCa0LjQtdCy0YHQutCw0Y8g0L7QsdC70LDRgdGC0YwsIDA3NDAw!5e0!3m2!1suk!2sua!4v1677942809861!5m2!1suk!2sua" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>                        </div>
+                                        </div>
+                                    </div>
+                                    <div class="contacts__item__title2">
+                                        <span>вул. Симона Петлюри, 20 - </span>
+                                        <a class="contacts__item__phone" href="tell:+380680458888">0(68)-045-88-88</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="contacts__item">
+                                <div class="contacts__item__content">
+                                    <div class="col2">
+                                        <div class="map">
+                                            <div id="map3"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2537.9377393549835!2d30.763864095606444!3d50.49811651406088!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40d4dbd1b1511b93%3A0x6f0d30205c8b1d37!2z0YPQuy4g0JrQuNC10LLRgdC60LDRjywgMTU2LCDQkdGA0L7QstCw0YDRiywg0JrQuNC10LLRgdC60LDRjyDQvtCx0LvQsNGB0YLRjCwgMDc0MDE!5e0!3m2!1suk!2sua!4v1677942378723!5m2!1suk!2sua" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>                        </div>
+                                        </div>
+                                    </div>
+                                    <div class="contacts__item__title2">
+                                        <span>вул. Київська, 156 - </span>
+                                        <a class="contacts__item__phone" href="tell:+380977888001">0(97)-788-80-01</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="contacts__select-block2">
+
+                        <div class="contacts__items2">
+                            <div class="contacts__item">
+                                <div class="contacts__item__content">
+                                    <div class="col2">
+                                        <div class="map">
+                                            <div id="map3"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2574.75713136146!2d30.11075395119706!3d49.80943347929089!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40d3423946c74b6b%3A0x7e17bc3dbb11714d!2z0J_RgNC40LLQvtC60LfQsNC70YzQvdCw0Y8g0YPQuy4sINCR0LXQu9Cw0Y8g0KbQtdGA0LrQvtCy0YwsINCa0LjQtdCy0YHQutCw0Y8g0L7QsdC70LDRgdGC0YwsIDA5MTAw!5e0!3m2!1suk!2sua!4v1677942341234!5m2!1suk!2sua" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>                        </div>
+                                        </div>
+                                    </div>
+                                    <div class="contacts__item__title2">
+                                        <span>вул. Привокзальна площа - </span>
+                                        <a class="contacts__item__phone" href="tell:+380680278888">0(68)-027-88-88</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="contacts__item">
+                                <div class="contacts__item__content">
+                                    <div class="col2">
+                                        <div class="map">
+                                            <div id="map3"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2575.5393330029933!2d30.114130051196604!3d49.79472737928911!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40d3421ecda0ce77%3A0x1a0f654c579ed319!2z0LLRg9C70LjRhtGPINCv0YDQvtGB0LvQsNCy0LAg0JzRg9C00YDQvtCz0L4sIDE2LCDQkdGW0LvQsCDQptC10YDQutCy0LAsINCa0LjRl9Cy0YHRjNC60LAg0L7QsdC7LiwgMDkxMDA!5e0!3m2!1suk!2sua!4v1677942297247!5m2!1suk!2sua" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>                        </div>
+                                        </div>
+                                    </div>
+                                    <div class="contacts__item__title2">
+                                        <span>вул. Ярослава Мудрого, 16 - </span>
+                                        <a class="contacts__item__phone" href="tell:+380686638888">0(68)-663-88-88</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="contacts__select-block2">
+
+                        <div class="contacts__items2">
+                            <div class="contacts__item">
+                                <div class="contacts__item__content">
+                                    <div class="col2">
+                                        <div class="map">
+                                            <div id="map3"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2543.387091184705!2d30.364549251219284!3d50.39662317936722!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40d4cbccaeb044b5%3A0x1f69708acf778cb0!2z0YPQuy4g0JrQuNC10LLRgdC60LDRjywgMSwg0JLQuNGI0L3QtdCy0L7QtSwg0JrQuNC10LLRgdC60LDRjyDQvtCx0LvQsNGB0YLRjCwgMDgxMzI!5e0!3m2!1suk!2sua!4v1677942235059!5m2!1suk!2sua" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>                        </div>
+                                        </div>
+                                    </div>
+                                    <div class="contacts__item__title2">
+                                        <span>вул.Київська, 1/102 - </span>
+                                        <a class="contacts__item__phone" href="tell:+380967888211">0(96)-788-82-11</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="contacts__select-block2">
+
+                        <div class="contacts__items2">
+                            <div class="contacts__item">
+                                <div class="contacts__item__content">
+                                    <div class="col2">
+                                        <div class="map">
+                                            <div id="map3"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5237.675458256759!2d30.792486373073583!3d50.379894444882616!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40d4c4f072515d3f%3A0xc16fdbfd4ed33336!2z0KXQsNGA0YzQutC-0LLRgdC60L7QtSDRiC4sIDE4MC8yMSwg0JrQuNC10LIsIDAyMDAw!5e0!3m2!1suk!2sua!4v1677942178377!5m2!1suk!2sua" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>                        </div>
+                                        </div>
+                                    </div>
+                                    <div class="contacts__item__title2">
+                                        <span>вул.Харківське шосе, 21В - </span>
+                                        <a class="contacts__item__phone" href="tell:+380677888211"> 0(67)-788-82-11</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="contacts__select-block2">
+
+                        <div class="contacts__items2">
+                            <div class="contacts__item">
+                                <div class="contacts__item__content">
+                                    <div class="col2">
+                                        <div class="map">
+                                            <div id="map3"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2533.3748897835517!2d30.4958569!3d50.582985!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40d4d35efa33d99f%3A0x31da965df82b6434!2z0L3QsNCxLiDRg9C7LiwgMTEsINCS0YvRiNCz0L7RgNC-0LQsINCa0LjQtdCy0YHQutCw0Y8g0L7QsdC70LDRgdGC0YwsIDA3MzAx!5e0!3m2!1suk!2sua!4v1677941925534!5m2!1suk!2sua" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>                        </div>
+                                        </div>
+                                    </div>
+                                    <div class="contacts__item__title2">
+                                        <span>вул.Набережна, 11 - </span>
+                                        <a class="contacts__item__phone" href="tell:+380987888011"> 0(98)-788-80-11</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="contacts__select-block2">6</div>
+                    <div class="contacts__select-block2">7</div>
+                    <div class="contacts__select-block2">8</div>
+                    <div class="contacts__select-block2">9</div>
+                    <div class="contacts__select-block2">10</div>
+                    <div class="contacts__select-block2">11</div>
+                    <div class="contacts__select-block2">12</div>
+                    <div class="contacts__select-block2">13</div>
+                    <div class="contacts__select-block2">14</div>
+                    <div class="contacts__select-block2">15</div>
 
 
                 </div>
@@ -1100,8 +1633,8 @@
 
 </footer>
 <script>
-        let select = document.getElementById('select');
-let block = document.querySelectorAll('.block');
+        let select = document.getElementById('select-form');
+let block = document.querySelectorAll('.contacts__select-block');
 let lastIndex = 0; // После каждой смены опции, сохраняем сюда индекс предыдущего блока
 
 select.addEventListener('change', function() {
@@ -1113,6 +1646,21 @@ block[index].style.display = "block"; // Показать блок с соотв
 
 lastIndex = index; // Обновить сохраненный индекс.
 });
+</script>
+<script>
+    let select2 = document.getElementById('select-form2');
+    let block2 = document.querySelectorAll('.contacts__select-block2');
+    let lastIndex2 = 0; // После каждой смены опции, сохраняем сюда индекс предыдущего блока
+
+    select2.addEventListener('change', function() {
+        block2[lastIndex2].style.display = "none";
+// Чтобы сразу делать именно его невидимым при следующей смене
+
+        let index = select2.selectedIndex; // Определить индекс выбранной опции
+        block2[index].style.display = "block"; // Показать блок с соответствующим индексом
+
+        lastIndex2 = index; // Обновить сохраненный индекс.
+    });
 </script>
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
