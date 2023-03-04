@@ -13,6 +13,7 @@ for (var i = 0; i < contacts_slider.length; i++) {
         $(contacts_slider[i]).slick({
             slidesToScroll: 1,
             autoplay: false,
+            width: 300,
             speed: 500,
             slidesToShow: 1,
             dots: false,
