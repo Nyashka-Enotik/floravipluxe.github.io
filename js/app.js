@@ -30,7 +30,7 @@ var contacts_slider = document.querySelector(".contacts__items-first");
         });
     }
     
-var contacts_slider2 = document.querySelectorAll(".contacts__items-first2");
+var contacts_slider2 = document.querySelector(".contacts__items-first2");
     var contacts_item2 = contacts_slider2.querySelectorAll(".contacts__item");
 
     if (contacts_item2.length > 1) {
