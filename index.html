@@ -716,7 +716,7 @@
             position: relative;
 
         }
-        slick-track {
+        .slick-track {
     width: auto!important;
 }
         .contacts__form-group {
@@ -3335,7 +3335,7 @@ block[lastIndex].style.display = "none";
 
 let index = select.selectedIndex; // Определить индекс выбранной опции
 block[index].style.display = "block"; // Показать блок с соответствующим индексом
-
+         block[index].classList.add = "active"; 
 lastIndex = index; // Обновить сохраненный индекс.
 });
 </script>
