@@ -695,12 +695,6 @@
                     #map3 iframe{
            width: 100%;
         }
-            .col2{
-                order:2;
-            }
-            .contacts__item__title2{
-                order: 1;
-            }
            .contacts__item__title{
                 min-width: 280px;
     max-width: 280px;
@@ -709,7 +703,14 @@
                 min-width: 300px;
             }
         }
-
+  @media (max-width:1024px) {
+                    .col2{
+                order:2;
+            }
+            .contacts__item__title2{
+                order: 1;
+            }
+         }
         .slick-slide { margin: 0 10px;}
         .contacts__select-block,
         .contacts__select-block2{
@@ -1692,7 +1693,7 @@ lastIndex = index; // Обновить сохраненный индекс.
 
         let index = select2.selectedIndex; // Определить индекс выбранной опции
         block2[index].style.display = "block"; // Показать блок с соответствующим индексом
-        var contacts_slider2 = block[index].querySelector(".contacts__items2");
+        var contacts_slider2 = block2[index].querySelector(".contacts__items2");
         if(contacts_slider2 && !contacts_slider2.classList.contains("slick-slider")){
             var contacts_item = contacts_slider2.querySelectorAll(".contacts__item");
             if (contacts_item.length > 1 ) {
