@@ -31,8 +31,10 @@ var contacts_slider = document.querySelector(".contacts__items-first");
     }
     
 var contacts_slider2 = document.querySelector(".contacts__items-first2");
+    console.log(contacts_slider2);
     var contacts_item2 = contacts_slider2.querySelectorAll(".contacts__item");
-
+console.log(contacts_item2);
+console.log(contacts_item2.length);
     if (contacts_item2.length > 1) {
         $(contacts_slider2).slick({
             slidesToScroll: 1,
