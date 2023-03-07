@@ -233,7 +233,7 @@
     grid-template-columns: 1fr 1fr;
     justify-content: space-between;
     align-items: flex-start;
-    gap: 25px 15px;
+    gap: 25px;
     margin: 0 15px;
             }
             .catalog__item {
@@ -304,12 +304,22 @@
                 max-height: 100vh;
                 transition: all 0.5s ease-in;
             }
+                  @media screen and (min-width: 768px) {
+              .catalog__items {
+                grid-template-columns: 1fr 1fr 1fr;
+            }
+                }
             @media screen and (min-width: 992px) {
                 .catalog__subtitle{
                     font-size: 14px;
                 }
 
             }
+                                  @media screen and (min-width: 1024px) {
+              .catalog__items {
+                grid-template-columns: 1fr 1fr 1fr 1fr;
+            }
+                }
             @media screen and (max-width: 992px) {
                 .catalog__img{
                     width: 70%;
@@ -362,6 +372,7 @@
                             data-target="#exampleModal">Контакти</button>
                 </div>
             </div>
+             </div>
         <div class="row space">
             <div class="col-3">
                 <img src="img/flover-img/card 21.png" alt="" class="catalog-card">
