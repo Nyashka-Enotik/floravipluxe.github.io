@@ -235,6 +235,7 @@
     align-items: flex-start;
     gap: 25px;
     margin: 0 15px;
+                margin-bottom:25px;
             }
             .catalog__item {
                 display: flex;
@@ -315,10 +316,14 @@
                 }
 
             }
-                                  @media screen and (min-width: 1024px) {
+              @media screen and (min-width: 1024px) {
               .catalog__items {
                 grid-template-columns: 1fr 1fr 1fr 1fr;
             }
+                  .catalog_button{
+                          height: 40px;
+    padding: 0 50px;
+                  }
                 }
             @media screen and (max-width: 992px) {
                 .catalog__img{
