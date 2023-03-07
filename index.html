@@ -227,125 +227,140 @@
         <div class="catalog-span d-flex justify-content-center">
             на ціну впливає ВИСОТА квітки
         </div>
-        <div class="row  space">
-            <div class="col-3">
-                <img src="img/flover-img/card 9.png" alt="" class="catalog-card">
+            <style>
+            .catalog__items{
+                justify-content: space-between;
+                align-items: flex-start;
+            }
+            .catalog__item {
+                flex: 0 0 25%;
+                max-width: 25%;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 10px;
+                background: #1e1e1d;
+                margin: 0 15px 15px 15px;
+                transition: all 0.2s ease-in-out;
+            }
+            .catalog__subtitle{
+                font-family: Montserrat;
+                font-size: 10px;
+                color: #484847;
+                margin: 0;
+            }
+            .catalog__title{
+                position: relative;
+                font-family: Montserrat;
+                color: #ffffff;
+                font-size: inherit;
+                font-style: italic;
+                margin: 0;
+            }
+            .catalog__buttons {
+                display: flex;
+                flex-direction: column;
+                gap: 15px;
+                margin: 30px 0 15px 0;
+            }
+            .catalog__button {
+                margin: 0px auto;
+                background: linear-gradient(92.62deg, #82358c 11.57%, #82236d 96.57%);
+                box-shadow: 0px 4px 15px rgb(130 53 140 / 40%);
+                border-radius: 25px;
+                height: 40px;
+                width: 100%;
+                padding: 0 50px;
+                font-family: Montserrat;
+                font-style: normal;
+                font-weight: 600;
+                font-size: 14px;
+                line-height: 14px;
+            }
+            .catalog__star{
+                position: relative;
+                width: 100px;
+            }
+            .catalog__title:after{
+                content: "★★★★★";
+                position: absolute;
+                color: #ffd644;
+                top: 100%;
+                left: 0;
+                margin-top: 10px;
+            }
+            .catalog__item:hover{
+                box-shadow: 0px 0px 5px #f7da91;
+                border-radius: 5px;
+            }
+                .catalog__buttons {
+                max-height: 0;
+                transition: all 0.5s ease-out;
+                overflow: hidden;
+            }
 
-                <div class="catalog-btn d-flex justify-content-center">
-                    <a href="#blog">
+            .catalog__item:hover > .catalog__buttons{
+                max-height: 100vh;
+                transition: all 0.5s ease-in;
+            }
+            @media screen and (min-width: 992px) {
+                .catalog__subtitle{
+                    font-size: 14px;
+                }
 
-                        <button type="button" class="btn btn-catalog" data-toggle="modal"
+            }
+            @media screen and (max-width: 992px) {
+                .catalog__img{
+                    width: 70%;
+                    height: auto;
+                }
+            }
+        </style>
+        <div class="row  space catalog__items">
+            <div class="catalog__item">
+                <img src="img/catalog/prestizh.png" width="192px" height="192px" alt="Троянда Престиж" class="catalog__img">
+                    <p class="catalog__subtitle">Троянда</p>
+                    <h3 class="catalog__title">Престиж</h3>
+                <div class="catalog__buttons">
+                        <button type="button" class="catalog__button" data-toggle="modal"
                                 data-target="#exampleModal">Замовити</button>
-                </div>
-
-                </a>
-
-            </div>
-            <div class="col-3">
-                <img src="img/flover-img/card 10.png" alt="" class="catalog-card">
-                <div class="catalog-btn d-flex justify-content-center">
-                    <a href="#blog">
-                        <button type="button" class="btn btn-catalog" data-toggle="modal"
-                                data-target="#exampleModal">Замовити</button>
-                    </a>
-                </div>
-            </div>
-            <div class="col-3">
-                <img src="img/flover-img/card 11.png" alt="" class="catalog-card">
-                <div class="catalog-btn d-flex justify-content-center">
-                    <a href="#blog">
-                        <button type="button" class="btn btn-catalog" data-toggle="modal"
-                                data-target="#exampleModal">Замовити</button>
-                    </a>
+                    <button type="button" class="catalog__button" data-toggle="modal"
+                            data-target="#exampleModal">Контакти</button>
                 </div>
             </div>
-            <div class="col-3">
-                <img src="img/flover-img/card 12.png" alt="" class="catalog-card">
-                <div class="catalog-btn d-flex justify-content-center">
-                    <a href="#blog">
-                        <button type="button" class="btn btn-catalog" data-toggle="modal"
-                                data-target="#exampleModal">Замовити</button>
-                    </a>
+            <div class="catalog__item">
+                <img src="img/catalog/prestizh.png" width="192px" height="192px" alt="Троянда Престиж" class="catalog__img">
+                <p class="catalog__subtitle">Троянда</p>
+                <h3 class="catalog__title">Престиж</h3>
+                <div class="catalog__buttons">
+                    <button type="button" class="catalog__button" data-toggle="modal"
+                            data-target="#exampleModal">Замовити</button>
+                    <button type="button" class="catalog__button" data-toggle="modal"
+                            data-target="#exampleModal">Контакти</button>
                 </div>
             </div>
-        </div>
-        <div class="row space">
-            <div class="col-3">
-                <img src="img/flover-img/card 13.png" alt="" class="catalog-card">
-                <div class="catalog-btn d-flex justify-content-center">
-                    <a href="#blog">
-                        <button type="button" class="btn btn-catalog" data-toggle="modal"
-                                data-target="#exampleModal">Замовити</button>
-                    </a>
+            <div class="catalog__item">
+                <img src="img/catalog/prestizh.png" width="192px" height="192px" alt="Троянда Престиж" class="catalog__img">
+                <p class="catalog__subtitle">Троянда</p>
+                <h3 class="catalog__title">Престиж</h3>
+                <div class="catalog__buttons">
+                    <button type="button" class="catalog__button" data-toggle="modal"
+                            data-target="#exampleModal">Замовити</button>
+                    <button type="button" class="catalog__button" data-toggle="modal"
+                            data-target="#exampleModal">Контакти</button>
                 </div>
             </div>
-            <div class="col-3">
-                <img src="img/flover-img/card 14.png" alt="" class="catalog-card">
-                <div class="catalog-btn d-flex justify-content-center" data-toggle="modal"
-                     data-target="#exampleModal">
-                    <a href="#blog">
-                        <button type="button" class="btn btn-catalog" data-toggle="modal"
-                                data-target="#exampleModal">Замовити</button>
-                    </a>
+            <div class="catalog__item">
+                <img src="img/catalog/prestizh.png" width="192px" height="192px" alt="Троянда Престиж" class="catalog__img">
+                <p class="catalog__subtitle">Троянда</p>
+                <h3 class="catalog__title">Престиж</h3>
+                <div class="catalog__buttons">
+                    <button type="button" class="catalog__button" data-toggle="modal"
+                            data-target="#exampleModal">Замовити</button>
+                    <button type="button" class="catalog__button" data-toggle="modal"
+                            data-target="#exampleModal">Контакти</button>
                 </div>
             </div>
-            <div class="col-3">
-                <img src="img/flover-img/card 15.png" alt="" class="catalog-card">
-                <div class="catalog-btn d-flex justify-content-center">
-                    <a href="#blog">
-                        <button type="button" class="btn btn-catalog" data-toggle="modal"
-                                data-target="#exampleModal">Замовити</button>
-                    </a>
-                </div>
-            </div>
-            <div class="col-3">
-                <img src="img/flover-img/card 16.png" alt="" class="catalog-card">
-                <div class="catalog-btn d-flex justify-content-center">
-                    <a href="#blog">
-                        <button type="button" class="btn btn-catalog" data-toggle="modal"
-                                data-target="#exampleModal">Замовити</button>
-                    </a>
-                </div>
-            </div>
-        </div>
-        <div class="row space">
-            <div class="col-3">
-                <img src="img/flover-img/card 17.png" alt="" class="catalog-card">
-                <div class="catalog-btn d-flex justify-content-center">
-                    <a href="#blog">
-                        <button type="button" class="btn btn-catalog" data-toggle="modal"
-                                data-target="#exampleModal">Замовити</button>
-                    </a>
-                </div>
-            </div>
-            <div class="col-3">
-                <img src="img/flover-img/card 18.png" alt="" class="catalog-card">
-                <div class="catalog-btn d-flex justify-content-center">
-                    <a href="#blog">
-                        <button type="button" class="btn btn-catalog" data-toggle="modal"
-                                data-target="#exampleModal">Замовити</button>
-                    </a>
-                </div>
-            </div>
-            <div class="col-3">
-                <img src="img/flover-img/card 19.png" alt="" class="catalog-card">
-                <div class="catalog-btn d-flex justify-content-center">
-                    <a href="#blog">
-                        <button type="button" class="btn btn-catalog" data-toggle="modal"
-                                data-target="#exampleModal">Замовити</button>
-                    </a>
-                </div>
-            </div>
-            <div class="col-3">
-                <img src="img/flover-img/card 20.png" alt="" class="catalog-card">
-                <div class="catalog-btn d-flex justify-content-center">
-                    <a href="#blog">
-                        <button type="button" class="btn btn-catalog" data-toggle="modal"
-                                data-target="#exampleModal">Замовити</button>
-                    </a>
-                </div>
-            </div>
-        </div>
         <div class="row space">
             <div class="col-3">
                 <img src="img/flover-img/card 21.png" alt="" class="catalog-card">
