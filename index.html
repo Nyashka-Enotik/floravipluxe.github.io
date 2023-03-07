@@ -265,6 +265,10 @@
                 flex-direction: column;
                 gap: 15px;
                 margin: 30px 0 15px 0;
+                                    max-height: 0;
+    transition: max-height .8s ease-in-out, z-index 0.75s ease-in;
+    /* transform: translate(0,-100%); */
+    z-index: -1;
             }
             .catalog__button {
     margin: 0px auto;
@@ -303,15 +307,12 @@ top: 15px;
                 box-shadow: 0px 0px 5px #f7da91;
                 border-radius: 5px;
             }
-                .catalog__buttons {
-                max-height: 0;
-                transition: all 0.5s ease-out;
-                overflow: hidden;
-            }
 
             .catalog__item:hover > .catalog__buttons{
-                max-height: 100vh;
-                transition: all 0.5s ease-in;
+                    max-height: 100vh;
+    transition: max-height .8s ease-in-out, z-index 0.95s ease-in;
+    transform: translate(0,0);
+    z-index: 1;
             }
                   @media screen and (min-width: 768px) {
               .catalog__items {
