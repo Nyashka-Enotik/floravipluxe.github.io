@@ -283,6 +283,14 @@
                 position: relative;
                 width: 100px;
             }
+             .catalog__item:after{
+                content: "url(https://github.com/Nyashka-Enotik/floravipluxe.github.io/img/catalog/heart-catalog.svg);
+                position: absolute;
+                color: #ffd644;
+                top: 100%;
+                left: 0;
+                margin-top: 10px;
+            }
             .catalog__title:after{
                 content: "★★★★★";
                 position: absolute;
@@ -320,10 +328,12 @@
               .catalog__items {
                 grid-template-columns: 1fr 1fr 1fr 1fr;
             }
+                                    .catalog__buttons{
+                          margin: 45px 0 15px 0;
+                  }
                   .catalog__button{
                           height: 40px;
     padding: 0 50px;
-                          margin: 45px 0 15px 0;
                   }
                 }
             @media screen and (max-width: 992px) {
